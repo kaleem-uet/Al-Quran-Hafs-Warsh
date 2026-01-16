@@ -1,0 +1,94 @@
+{
+  "expo": {
+    "name": "Open Mushaf",
+    "slug": "open-mushaf-native",
+    "owner": "adelpro",
+    "version": "4.0.0",
+    "orientation": "default",
+    "assetBundlePatterns": ["**/*"],
+    "icon": "./assets/images/icon.png",
+    "scheme": "myapp",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.adelpro.openmushafnative",
+      "requireFullScreen": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "edgeToEdgeEnabled": true,
+      "intentFilters": [
+        {
+          "action": "VIEW",
+          "data": {
+            "scheme": "https",
+            "host": "quran.us.kg",
+            "pathPrefix": "/"
+          },
+          "category": ["BROWSABLE", "DEFAULT"],
+          "autoVerify": true
+        }
+      ],
+      "softwareKeyboardLayoutMode": "resize",
+      "jsEngine": "hermes",
+      "package": "com.adelpro.openmushafnative",
+      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.adelpro.openmushafnative"
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/images/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "enableProguardInReleaseBuilds": true,
+            "enableShrinkResourcesInReleaseBuilds": true
+          }
+        }
+      ],
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#f8f8f0",
+          "image": "./assets/images/icon-large.png",
+          "dark": {
+            "image": "./assets/images/icon-large.png",
+            "backgroundColor": "#eeeee6"
+          },
+          "imageWidth": 200
+        }
+      ],
+      "expo-web-browser",
+      "expo-router",
+      "expo-font",
+      "expo-audio",
+      "expo-secure-store",
+      "react-native-edge-to-edge"
+    ],
+    "experiments": {
+      "typedRoutes": true,
+      "reactCompiler": true
+    },
+    "extra": {
+      "eas": {
+        "projectId": "2360a464-857f-4685-8c0f-be166a166847"
+      }
+    },
+    "updates": {
+      "url": "https://u.expo.dev/2360a464-857f-4685-8c0f-be166a166847",
+      "enabled": true,
+      "checkAutomatically": "ON_LOAD",
+      "fallbackToCacheTimeout": 3000
+    },
+    "runtimeVersion": {
+      "policy": "fingerprint"
+    }
+  }
+}

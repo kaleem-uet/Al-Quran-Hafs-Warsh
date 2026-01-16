@@ -1,0 +1,54 @@
+name: Firebase Manual Deploy
+
+on:
+  workflow_dispatch:
+    inputs:
+      channel:
+        description: 'Select deployment channel'
+        required: true
+        default: 'preview'
+        type: choice
+        options:
+          - preview
+          - live
+      branch:
+        description: 'Select branch to deploy'
+        required: true
+        default: 'main'
+        type: string
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    # Add environment configuration
+    environment:
+      name: ${{ github.event.inputs.channel }}
+      url: ${{ steps.deploy-firebase.outputs.details_url }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.inputs.branch }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.18.1'
+          cache: 'yarn'
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Build web app
+        run: yarn predeploy
+
+      - name: Deploy to Firebase
+        id: deploy-firebase
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: '${{ secrets.GITHUB_TOKEN }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT }}'
+          channelId: ${{ github.event.inputs.channel }}
+          projectId: open-mushaf-native
+          expires: ${{ github.event.inputs.channel == 'preview' && '7d' || '' }}

@@ -1,0 +1,271 @@
+{
+  "common": {
+    "app_name": "Open Mushaf",
+    "loading": "Loading...",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "save": "Save",
+    "close": "Close",
+    "next": "Next",
+    "previous": "Previous",
+    "finish": "Finish",
+    "skip": "Skip",
+    "ok": "OK",
+    "error": "Error",
+    "return": "Return"
+  },
+  "reading_position": {
+    "return_to_position": "Return to reading position (page {{page}})",
+    "save_position": "Save current position",
+    "return_hint": "Return to reading position {{page}}"
+  },
+  "navigation": {
+    "tabs": {
+      "index": "Home",
+      "mushaf": "Mushaf",
+      "more": "More"
+    },
+    "screens": {
+      "search": "Search",
+      "navigation": "Navigate",
+      "tutorial": "Tutorial",
+      "tracker": "Daily Ward",
+      "settings": "Settings"
+    }
+  },
+  "lists": {
+    "surahs": "Surahs",
+    "juzs": "Juz",
+    "page": "Page"
+  },
+  "settings": {
+    "title": "Settings",
+    "page_flip_sound": {
+      "label": "Page flip sound:",
+      "accessibility_label": "Enable page flip sound",
+      "accessibility_hint": "Tap to enable or disable page flip sound"
+    },
+    "tracker_notification": {
+      "label": "Daily Ward notification:",
+      "accessibility_label": "Enable daily Ward completion notification",
+      "accessibility_hint": "Tap to enable or disable daily Ward completion notification"
+    },
+    "night_brightness": {
+      "label": "Night mode brightness: ({{value}}%)"
+    },
+    "notifications": {
+      "label": "Enable notifications:",
+      "options": {
+        "disabled": "Disabled",
+        "hizb": "Hizb",
+        "juz": "Juz"
+      }
+    },
+    "riwaya": {
+      "label": "Choose recitation:",
+      "options": {
+        "hafs": "Hafs",
+        "warsh": "Warsh"
+      }
+    },
+    "language": {
+      "label": "Language:",
+      "options": {
+        "english": "English",
+        "arabic": "العربية",
+        "urdu": "اردو"
+      }
+    },
+    "theme": {
+      "label": "Theme:",
+      "options": {
+        "system": "System",
+        "light": "Light",
+        "dark": "Dark"
+      },
+      "accessibility_label": "Choose app theme",
+      "accessibility_hint": "Select between system, light, or dark theme"
+    },
+    "reset": {
+      "button": "Reset app",
+      "confirm_title": "Confirm",
+      "confirm_message": "Are you sure you want to reset the app?"
+    }
+  },
+  "more": {
+    "settings": "Settings",
+    "tutorial": "Tutorial",
+    "share": "Share App",
+    "share_message": "Share this Quranic app with others | Open Mushaf Native\n{{url}}"
+  },
+  "tutorial": {
+    "slides": {
+      "welcome": {
+        "title": "Welcome!",
+        "description": "Welcome to the Mushaf app"
+      },
+      "mushaf": {
+        "title": "Mushaf",
+        "description": "You can navigate between pages by swiping right or left"
+      },
+      "top_menu": {
+        "title": "Top Menu",
+        "description": [
+          {
+            "text": "The top menu displays information about the current page such as the Surah name, Juz number, and the eighth position within the Juz.",
+            "align": "center"
+          },
+          {
+            "text": "You can track your daily Ward progress through the circular progress indicator.",
+            "align": "start"
+          },
+          {
+            "text": "Navigation icon: Allows you to quickly navigate to a specific page or verse.",
+            "align": "start"
+          },
+          {
+            "text": "Search icon: Allows you to search within the text of the Holy Quran.",
+            "align": "start"
+          },
+          {
+            "text": "Fullscreen icon: Shows or hides the bottom menu to display the page in full.",
+            "align": "start"
+          }
+        ]
+      },
+      "search": {
+        "title": "Search",
+        "description": [
+          {
+            "text": "You can access the search page from the top menu in the Mushaf, which allows you to search within the text of the Holy Quran.",
+            "align": "center"
+          },
+          {
+            "text": "Simple search: Displays results matching the entered text directly.",
+            "align": "start"
+          },
+          {
+            "text": "Advanced search feature: Can be activated by pressing the search icon, providing more precise search options.",
+            "align": "start"
+          }
+        ]
+      },
+      "navigation": {
+        "title": "Navigation",
+        "description": [
+          {
+            "text": "You can access the navigation page from the top menu in the Mushaf.",
+            "align": "center"
+          },
+          {
+            "text": "It allows you to quickly navigate to a specific Surah through the Surah list.",
+            "align": "start"
+          },
+          {
+            "text": "You can easily navigate between specific pages and verses in any Surah of the Holy Quran.",
+            "align": "start"
+          },
+          {
+            "text": "This feature helps you navigate quickly and easily through the Holy Mushaf.",
+            "align": "start"
+          }
+        ]
+      },
+      "tracker": {
+        "title": "Daily Ward",
+        "description": [
+          {
+            "text": "Track your daily progress in reading the Quran through the progress bar that displays the completion percentage.",
+            "align": "center"
+          },
+          {
+            "text": "The app shows you the number of Ahzab or pages you have read from the daily Ward.",
+            "align": "start"
+          },
+          {
+            "text": "You can easily adjust the daily Ward goal using the increase or decrease buttons.",
+            "align": "start"
+          },
+          {
+            "text": "The app displays the last page you stopped at yesterday to help you continue.",
+            "align": "start"
+          },
+          {
+            "text": "You can display the daily Ward interface by tapping from the top menu of the app.",
+            "align": "start"
+          }
+        ]
+      },
+      "settings": {
+        "title": "Settings",
+        "description": [
+          {
+            "text": "You can customize your app experience through the Settings page.",
+            "align": "center"
+          },
+          {
+            "text": "Settings include: enable or disable page flip sound, daily Ward notification, adjust night mode brightness, enable notifications (Juz/Hizb/Disable), choose recitation (Hafs/Warsh), and reset the app.",
+            "align": "start"
+          },
+          {
+            "text": "You can access the Settings page from the bottom menu.",
+            "align": "start"
+          }
+        ]
+      }
+    }
+  },
+  "top_menu": {
+    "current_surah": "Current Surah: {{surah}}",
+    "juz": "Juz - {{number}}"
+  },
+  "search": {
+    "placeholder": "Search...",
+    "no_results": "No results found",
+    "results": "results",
+    "advanced_toggle": "Toggle advanced search",
+    "error_message": "An error occurred: {{error}}",
+    "go_to_page": "Go to page {{page}}"
+  },
+  "riwaya": {
+    "select_prompt": "Please select a recitation"
+  },
+  "accessibility": {
+    "navigation": {
+      "index_label": "Index of Surahs and Juz",
+      "index_hint": "Navigate to the index page to view the list of Surahs and Juz",
+      "mushaf_label": "Mushaf",
+      "mushaf_hint": "Navigate to the Mushaf page for reading",
+      "more_label": "More",
+      "more_hint": "Navigate to the More page for settings and other options"
+    },
+    "page_input": "Page number input",
+    "go_to_page": "Go to specific page"
+  },
+  "seo": {
+    "home": {
+      "title": "Open Mushaf - Mushaf",
+      "description": "Read the Quran with multiple options for recitations"
+    },
+    "settings": {
+      "title": "Open Mushaf - Settings",
+      "description": "App Settings - Customize appearance, notifications, and recitation"
+    },
+    "search": {
+      "title": "Search - Open Mushaf",
+      "description": "Search within the verses of the Holy Quran"
+    },
+    "tutorial": {
+      "title": "Tutorial - Open Mushaf",
+      "description": "Tutorial guide for using the Mushaf app"
+    },
+    "tracker": {
+      "title": "Daily Ward - Open Mushaf",
+      "description": "Daily Ward in the Mushaf app"
+    },
+    "navigation": {
+      "title": "Open Mushaf - Navigation",
+      "description": "Browse pages, Surahs, and verses of the Holy Quran easily using the navigation interface in Open Mushaf"
+    }
+  }
+}
