@@ -54,6 +54,7 @@
     "@commitlint/config-conventional": "^19.4.1",
     "@expo-google-fonts/amiri": "^0.3.0",
     "@expo-google-fonts/tajawal": "^0.3.0",
+    "@expo/metro-config": "~0.19.6",
     "@expo/vector-icons": "^15.0.3",
     "@galgamify/react-native-image-zoom": "^3.0.0",
     "@gorhom/bottom-sheet": "^5.1.4",
