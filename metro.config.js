@@ -1,10 +1,10 @@
 /* eslint-env node */
-const { getDefaultConfig } = require('expo/metro-config');
+const { getDefaultConfig } = require('@expo/metro-config');
 const { FileStore } = require('metro-cache');
 const os = require('os');
 const path = require('path');
 
-/** @type {import('expo/metro-config').MetroConfig} */
+/** @type {import('@expo/metro-config').MetroConfig} */
 const config = getDefaultConfig(__dirname);
 
 // SVG transformer configuration
