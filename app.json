@@ -90,11 +90,11 @@
     "extra": {
       "router": {},
       "eas": {
-        "projectId": "376e0536-0a92-4280-b5b5-19184cc2322c"
+        "projectId": "62f093ff-7d5d-4099-8824-59be18441b15"
       }
     },
     "updates": {
-      "url": "https://u.expo.dev/376e0536-0a92-4280-b5b5-19184cc2322c"
+      "url": "https://u.expo.dev/62f093ff-7d5d-4099-8824-59be18441b15"
     },
     "runtimeVersion": "4.0.0"
   }
