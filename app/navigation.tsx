@@ -110,7 +110,7 @@ export default function Navigation() {
     return (
       <ThemedView style={styles.container}>
         <ThemedView style={styles.errorContainer}>
-          <ThemedText type="defaultSemiBold">{`حدث خطأ: ${error}`}</ThemedText>
+          <ThemedText type="defaultSemiBold">{t('navigation.error', { error })}</ThemedText>
         </ThemedView>
       </ThemedView>
     );
@@ -140,7 +140,7 @@ export default function Navigation() {
             accessibilityLabel="Navigate to a page"
             accessibilityRole="header"
           >
-            الانتقال إلى الصفحة:
+            {t('navigation.go_to_page')}
           </ThemedText>
         </ThemedView>
         <PageNavigator
@@ -170,7 +170,7 @@ export default function Navigation() {
             accessibilityLabel="Navigate to Surah and Aya"
             accessibilityRole="header"
           >
-            الانتقال إلى الآية:
+            {t('navigation.go_to_aya')}
           </ThemedText>
         </ThemedView>
         <SurahAyaNavigator

@@ -14,12 +14,12 @@ type Props = {
 };
 
 export default function SEO({
-  title = 'Open Mushaf',
-  description = 'A modern and minimalist Quran Mushaf application',
+  title = 'Al Quran',
+  description = 'A modern and minimalist Quran application',
   image = 'https://open-mushaf-native.web.app/og-image.png',
   url = 'https://open-mushaf-native.web.app',
   canonical,
-  keywords = 'quran, mushaf, islam, holy book, reading quran',
+  keywords = 'quran, al quran, islam, holy book, reading quran',
   locale = 'ar_DZ',
   structuredData,
 }: Props) {
@@ -39,7 +39,7 @@ export default function SEO({
       <meta property="og:locale" content={locale} />
 
       {/* Additional useful OG tags */}
-      <meta property="og:site_name" content="Open Mushaf" />
+      <meta property="og:site_name" content="Al Quran" />
 
       {/* Twitter */}
       <meta property="twitter:card" content="summary_large_image" />

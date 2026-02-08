@@ -74,16 +74,16 @@ export default function TrackerScreen() {
   const getHizbText = (count: number) => {
     const hizbCount = count;
 
-    if (hizbCount === 0) return '0 أحزاب';
-    if (hizbCount === 1) return 'حزب واحد';
-    if (hizbCount === 2) return 'حزبين';
-    if (hizbCount >= 3 && hizbCount <= 10) return `${hizbCount} أحزاب`;
-    return `${hizbCount} حزباً`;
+    if (hizbCount === 0) return t('tracker.hizb.zero');
+    if (hizbCount === 1) return t('tracker.hizb.one');
+    if (hizbCount === 2) return t('tracker.hizb.two');
+    if (hizbCount >= 3 && hizbCount <= 10) return t('tracker.hizb.few', { count: hizbCount });
+    return t('tracker.hizb.many', { count: hizbCount });
   };
 
   return (
     <>
-      <Stack.Screen options={{ title: 'الورد' }} />
+      <Stack.Screen options={{ title: t('tracker.title') }} />
       <SEO title={t('seo.tracker.title')} description={t('seo.tracker.description')} />
       <ThemedView style={styles.container}>
         <ScrollView
@@ -102,7 +102,7 @@ export default function TrackerScreen() {
                 color={iconColor}
                 style={[styles.icon, { color: primaryColor }]}
               />
-              <ThemedText style={styles.label}>الورد اليومي:</ThemedText>
+              <ThemedText style={styles.label}>{t('tracker.daily_ward')}</ThemedText>
             </ThemedView>
 
             <ThemedView style={[styles.progressContainer, { backgroundColor: mutedColor }]}>
@@ -123,23 +123,24 @@ export default function TrackerScreen() {
             </ThemedView>
 
             <ThemedText style={styles.infoText}>
-              قراءة{' '}
-              {Number.isInteger(dailyTrackerCompletedValue.value)
-                ? getHizbText(dailyTrackerCompletedValue.value)
-                : `${dailyTrackerCompletedValue.value.toFixed(1)} حزباً`}{' '}
-              من أصل {getHizbText(dailyTrackerGoalValue)}
+              {t('tracker.progress_reading', {
+                count: Number.isInteger(dailyTrackerCompletedValue.value)
+                  ? getHizbText(dailyTrackerCompletedValue.value)
+                  : `${dailyTrackerCompletedValue.value.toFixed(1)} ${t('tracker.hizb.many', { count: dailyTrackerCompletedValue.value })}`,
+                total: getHizbText(dailyTrackerGoalValue)
+              })}
             </ThemedText>
 
             {yesterdayPageValue.value > 0 && (
               <ThemedText style={[styles.infoText, { fontSize: 14 }]}>
-                آخر صفحة من الأمس: {yesterdayPageValue.value}
+                {t('tracker.last_page_yesterday', { page: yesterdayPageValue.value })}
               </ThemedText>
             )}
 
             <ThemedView style={styles.controlsContainer}>
               <ThemedView style={styles.controlGroup}>
                 <ThemedText style={styles.controlLabel}>
-                  الهدف اليومي:
+                  {t('tracker.daily_goal')}
                 </ThemedText>
                 <ThemedView style={styles.controls}>
                   <TouchableOpacity
@@ -174,17 +175,17 @@ export default function TrackerScreen() {
                 color={iconColor}
                 style={[styles.icon, { color: primaryColor }]}
               />
-              <ThemedText style={styles.label}>عن تقسيم القرآن:</ThemedText>
+              <ThemedText style={styles.label}>{t('tracker.about_division')}</ThemedText>
             </ThemedView>
 
             <ThemedText style={styles.infoText}>
-              القرآن الكريم مقسم إلى 60 حزباً لتسهيل القراءة والمراجعة.
+              {t('tracker.division_info')}
             </ThemedText>
 
             <ThemedText style={[styles.infoText, { color: primaryColor }]}>
-              يُحسب الورد الْيَوْمِيُّ من خلال مقارنة الصفحة الحالية (صفحة{' '}
-              {typeof savedPage === 'number' ? savedPage : 'غير محددة'}) بآخر
-              صفحة قرأتها بالأمس، وتحديد عدد الأحزاب المقروءة.
+              {t('tracker.calculation_info', {
+                page: typeof savedPage === 'number' ? savedPage : t('common.loading')
+              })}
             </ThemedText>
 
             <ThemedView style={styles.resetButtonsContainer}>
@@ -210,7 +211,7 @@ export default function TrackerScreen() {
                       fontSize: 18,
                     }}
                   >
-                    إعادة التعيين
+                    {t('tracker.reset_button')}
                   </Text>
                 </ThemedView>
               </ThemedButton>
@@ -236,7 +237,7 @@ export default function TrackerScreen() {
               onStartShouldSetResponder={() => true}
             >
               <ThemedView style={[styles.modalHeader, { borderBottomColor: borderColor }]}>
-                <ThemedText style={styles.modalTitle}>تأكيد</ThemedText>
+                <ThemedText style={styles.modalTitle}>{t('tracker.confirm_title')}</ThemedText>
                 <TouchableOpacity
                   style={styles.closeButton}
                   onPress={() => setConfirmModalVisible(false)}
@@ -246,7 +247,7 @@ export default function TrackerScreen() {
               </ThemedView>
 
               <ThemedText style={styles.modalMessage}>
-                هل أنت متأكد من رغبتك في إعادة تعيين التقدم؟
+                {t('tracker.confirm_message')}
               </ThemedText>
 
               <ThemedView style={styles.modalActions}>
@@ -255,14 +256,14 @@ export default function TrackerScreen() {
                   onPress={() => setConfirmModalVisible(false)} // Just close modal
                   style={styles.modalButton}
                 >
-                  إلغاء
+                  {t('tracker.cancel')}
                 </ThemedButton>
                 <ThemedButton
                   variant="primary"
                   onPress={performReset} // Call the reset logic
                   style={styles.modalButton}
                 >
-                  تأكيد
+                  {t('tracker.confirm')}
                 </ThemedButton>
               </ThemedView>
             </ThemedView>

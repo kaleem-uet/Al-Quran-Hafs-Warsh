@@ -15,10 +15,17 @@ import useQuranMetadata from './useQuranMetadata';
 export default function useImagePreloader(currentPage: number) {
   const mushafRiwayaValue = useAtomValue(mushafRiwaya);
   const preloadedPagesRef = useRef<Set<number>>(new Set());
+  const previousRiwayaRef = useRef<string | undefined>(mushafRiwayaValue);
   const { specsData } = useQuranMetadata();
   const { defaultNumberOfPages } = specsData;
 
   useEffect(() => {
+    // Clear cache when riwaya changes
+    if (previousRiwayaRef.current !== mushafRiwayaValue) {
+      preloadedPagesRef.current.clear();
+      previousRiwayaRef.current = mushafRiwayaValue;
+    }
+
     // Skip if riwaya is not defined
     if (mushafRiwayaValue === undefined) return;
 

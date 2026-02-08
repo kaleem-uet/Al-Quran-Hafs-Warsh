@@ -1,5 +1,11 @@
 import { useState } from 'react';
-import { Modal, Pressable, StyleSheet, TouchableOpacity, View } from 'react-native';
+import {
+  Modal,
+  Pressable,
+  StyleSheet,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 
 import { Feather } from '@expo/vector-icons';
 import { useAtom } from 'jotai/react';
@@ -17,8 +23,8 @@ import { useTranslation } from '@/hooks/useTranslation';
 import {
   flipSound,
   mushafRiwaya,
-  themePreferenceAtom,
   type ThemePreference,
+  themePreferenceAtom,
 } from '@/jotai/atoms';
 import { RiwayaByIndice, RiwayaByValue } from '@/utils';
 import { clearStorageAndReload } from '@/utils/storage/clearStorage';
@@ -37,8 +43,14 @@ export default function SettingsScreen() {
     t('settings.theme.options.dark'),
   ];
   const themeValues: ThemePreference[] = ['system', 'light', 'dark'];
-  const { textColor, primaryColor, cardColor, iconColor, borderColor, backgroundColor } =
-    useColors();
+  const {
+    textColor,
+    primaryColor,
+    cardColor,
+    iconColor,
+    borderColor,
+    backgroundColor,
+  } = useColors();
   const [mushafRiwayaValue, setMushafRiwayaValue] = useAtom(mushafRiwaya);
   const [confirmModalVisible, setConfirmModalVisible] = useState(false);
 
@@ -59,9 +71,16 @@ export default function SettingsScreen() {
         />
 
         {/* Language Selection */}
-        <View style={[styles.card, { backgroundColor: cardColor, borderColor }]}>
+        <View
+          style={[styles.card, { backgroundColor: cardColor, borderColor }]}
+        >
           <View style={styles.cardHeader}>
-            <View style={[styles.iconWrapper, { backgroundColor: primaryColor + '15' }]}>
+            <View
+              style={[
+                styles.iconWrapper,
+                { backgroundColor: primaryColor + '15' },
+              ]}
+            >
               <Feather name="globe" size={20} color={primaryColor} />
             </View>
             <ThemedText style={styles.cardTitle}>
@@ -72,9 +91,16 @@ export default function SettingsScreen() {
         </View>
 
         {/* Theme Selection */}
-        <View style={[styles.card, { backgroundColor: cardColor, borderColor }]}>
+        <View
+          style={[styles.card, { backgroundColor: cardColor, borderColor }]}
+        >
           <View style={styles.cardHeader}>
-            <View style={[styles.iconWrapper, { backgroundColor: primaryColor + '15' }]}>
+            <View
+              style={[
+                styles.iconWrapper,
+                { backgroundColor: primaryColor + '15' },
+              ]}
+            >
               <Feather name="moon" size={20} color={primaryColor} />
             </View>
             <ThemedText style={styles.cardTitle}>
@@ -101,7 +127,11 @@ export default function SettingsScreen() {
 
         {/* Page Flip Sound */}
         <Pressable
-          style={[styles.card, styles.rowCard, { backgroundColor: cardColor, borderColor }]}
+          style={[
+            styles.card,
+            styles.rowCard,
+            { backgroundColor: cardColor, borderColor },
+          ]}
           onPress={toggleFlipSoundSwitch}
           accessibilityRole="switch"
           accessibilityLabel={t('settings.page_flip_sound.accessibility_label')}
@@ -109,7 +139,12 @@ export default function SettingsScreen() {
           accessibilityState={{ checked: isFlipSoundEnabled }}
         >
           <View style={styles.rowCardLeft}>
-            <View style={[styles.iconWrapper, { backgroundColor: primaryColor + '15' }]}>
+            <View
+              style={[
+                styles.iconWrapper,
+                { backgroundColor: primaryColor + '15' },
+              ]}
+            >
               <Feather name="volume-2" size={20} color={primaryColor} />
             </View>
             <ThemedText style={styles.cardTitle}>
@@ -123,15 +158,24 @@ export default function SettingsScreen() {
             toggle={isFlipSoundEnabled}
             setToggle={toggleFlipSoundSwitch}
             aria-checked={isFlipSoundEnabled}
-            accessibilityLabel={t('settings.page_flip_sound.accessibility_label')}
+            accessibilityLabel={t(
+              'settings.page_flip_sound.accessibility_label',
+            )}
             accessibilityState={{ checked: isFlipSoundEnabled }}
           />
         </Pressable>
 
         {/* Riwaya Selection */}
-        <View style={[styles.card, { backgroundColor: cardColor, borderColor }]}>
+        <View
+          style={[styles.card, { backgroundColor: cardColor, borderColor }]}
+        >
           <View style={styles.cardHeader}>
-            <View style={[styles.iconWrapper, { backgroundColor: primaryColor + '15' }]}>
+            <View
+              style={[
+                styles.iconWrapper,
+                { backgroundColor: primaryColor + '15' },
+              ]}
+            >
               <Feather name="book-open" size={20} color={primaryColor} />
             </View>
             <ThemedText style={styles.cardTitle}>
@@ -180,7 +224,9 @@ export default function SettingsScreen() {
               style={[styles.modalContent, { backgroundColor: cardColor }]}
               onStartShouldSetResponder={() => true}
             >
-              <ThemedView style={[styles.modalHeader, { borderBottomColor: borderColor }]}>
+              <ThemedView
+                style={[styles.modalHeader, { borderBottomColor: borderColor }]}
+              >
                 <ThemedText style={styles.modalTitle}>
                   {t('settings.reset.confirm_title')}
                 </ThemedText>

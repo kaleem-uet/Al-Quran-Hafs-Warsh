@@ -1,6 +1,6 @@
 {
   "common": {
-    "app_name": "Open Mushaf",
+    "app_name": "Al Quran",
     "loading": "Loading...",
     "cancel": "Cancel",
     "confirm": "Confirm",
@@ -22,7 +22,7 @@
   "navigation": {
     "tabs": {
       "index": "Home",
-      "mushaf": "Mushaf",
+      "mushaf": "Quran",
       "more": "More"
     },
     "screens": {
@@ -31,7 +31,14 @@
       "tutorial": "Tutorial",
       "tracker": "Daily Ward",
       "settings": "Settings"
-    }
+    },
+    "go_to_page": "Navigate to page:",
+    "go_to_aya": "Navigate to verse:",
+    "select_surah": "Select Surah",
+    "select_aya": "Select verse",
+    "loading": "Loading...",
+    "error": "An error occurred: {{error}}",
+    "ayah": "verse"
   },
   "lists": {
     "surahs": "Surahs",
@@ -96,16 +103,16 @@
     "settings": "Settings",
     "tutorial": "Tutorial",
     "share": "Share App",
-    "share_message": "Share this Quranic app with others | Open Mushaf Native\n{{url}}"
+    "share_message": "Share this Quranic app with others | Al Quran\n{{url}}"
   },
   "tutorial": {
     "slides": {
       "welcome": {
         "title": "Welcome!",
-        "description": "Welcome to the Mushaf app"
+        "description": "Welcome to the Al Quran app"
       },
       "mushaf": {
-        "title": "Mushaf",
+        "title": "Quran",
         "description": "You can navigate between pages by swiping right or left"
       },
       "top_menu": {
@@ -137,7 +144,7 @@
         "title": "Search",
         "description": [
           {
-            "text": "You can access the search page from the top menu in the Mushaf, which allows you to search within the text of the Holy Quran.",
+            "text": "You can access the search page from the top menu in the Quran, which allows you to search within the text of the Holy Quran.",
             "align": "center"
           },
           {
@@ -154,7 +161,7 @@
         "title": "Navigation",
         "description": [
           {
-            "text": "You can access the navigation page from the top menu in the Mushaf.",
+            "text": "You can access the navigation page from the top menu in the Quran.",
             "align": "center"
           },
           {
@@ -166,7 +173,7 @@
             "align": "start"
           },
           {
-            "text": "This feature helps you navigate quickly and easily through the Holy Mushaf.",
+            "text": "This feature helps you navigate quickly and easily through the Holy Quran.",
             "align": "start"
           }
         ]
@@ -234,38 +241,60 @@
     "navigation": {
       "index_label": "Index of Surahs and Juz",
       "index_hint": "Navigate to the index page to view the list of Surahs and Juz",
-      "mushaf_label": "Mushaf",
-      "mushaf_hint": "Navigate to the Mushaf page for reading",
+      "mushaf_label": "Quran",
+      "mushaf_hint": "Navigate to the Quran page for reading",
       "more_label": "More",
       "more_hint": "Navigate to the More page for settings and other options"
     },
     "page_input": "Page number input",
     "go_to_page": "Go to specific page"
   },
+  "tracker": {
+    "title": "Daily Ward",
+    "daily_ward": "Daily Ward:",
+    "progress_reading": "Reading {{count}} Ahzab out of {{total}}",
+    "last_page_yesterday": "Last page from yesterday: {{page}}",
+    "daily_goal": "Daily goal:",
+    "about_division": "About Quran division:",
+    "division_info": "The Holy Quran is divided into 60 Ahzab (parts) to facilitate reading and review.",
+    "calculation_info": "The daily Ward is calculated by comparing the current page (page {{page}}) to the last page you read yesterday, and determining the number of Ahzab read.",
+    "reset_button": "Reset",
+    "confirm_title": "Confirm",
+    "confirm_message": "Are you sure you want to reset the progress?",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "hizb": {
+      "zero": "0 Ahzab",
+      "one": "one Hizb",
+      "two": "two Ahzab",
+      "few": "{{count}} Ahzab",
+      "many": "{{count}} Ahzab"
+    }
+  },
   "seo": {
     "home": {
-      "title": "Open Mushaf - Mushaf",
+      "title": "Al Quran - Quran",
       "description": "Read the Quran with multiple options for recitations"
     },
     "settings": {
-      "title": "Open Mushaf - Settings",
+      "title": "Al Quran - Settings",
       "description": "App Settings - Customize appearance, notifications, and recitation"
     },
     "search": {
-      "title": "Search - Open Mushaf",
+      "title": "Search - Al Quran",
       "description": "Search within the verses of the Holy Quran"
     },
     "tutorial": {
-      "title": "Tutorial - Open Mushaf",
-      "description": "Tutorial guide for using the Mushaf app"
+      "title": "Tutorial - Al Quran",
+      "description": "Tutorial guide for using the Al Quran app"
     },
     "tracker": {
-      "title": "Daily Ward - Open Mushaf",
-      "description": "Daily Ward in the Mushaf app"
+      "title": "Daily Ward - Al Quran",
+      "description": "Daily Ward in the Al Quran app"
     },
     "navigation": {
-      "title": "Open Mushaf - Navigation",
-      "description": "Browse pages, Surahs, and verses of the Holy Quran easily using the navigation interface in Open Mushaf"
+      "title": "Al Quran - Navigation",
+      "description": "Browse pages, Surahs, and verses of the Holy Quran easily using the navigation interface in Al Quran"
     }
   }
 }

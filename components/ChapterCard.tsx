@@ -92,9 +92,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   name: {
-    fontSize: 20,
-    fontFamily: 'Tajawal_700Bold',
-    lineHeight: 28,
+    fontSize: 22,
+    fontFamily: 'Amiri_700Bold',
+    lineHeight: 32,
     textAlign: 'left',
   },
   infoContainer: {

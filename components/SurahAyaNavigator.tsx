@@ -4,6 +4,7 @@ import { FlatList, Modal, StyleSheet, TouchableOpacity } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 
 import useQuranMetadata from '@/hooks/useQuranMetadata';
+import { useTranslation } from '@/hooks/useTranslation';
 import { Surah } from '@/types';
 import { isWeb } from '@/utils';
 
@@ -33,6 +34,7 @@ export default function SurahAyaNavigator({
   borderColor,
 }: SurahAyaNavigatorProps) {
   const { surahData, isLoading, error } = useQuranMetadata();
+  const { t } = useTranslation();
   const [surahModalVisible, setSurahModalVisible] = useState(false);
   const [ayaModalVisible, setAyaModalVisible] = useState(false);
 
@@ -55,7 +57,7 @@ export default function SurahAyaNavigator({
       <ThemedView
         style={[styles.container, { backgroundColor: 'transparent' }]}
       >
-        <ThemedText>جاري التحميل...</ThemedText>
+        <ThemedText>{t('navigation.loading')}</ThemedText>
       </ThemedView>
     );
   }
@@ -65,7 +67,7 @@ export default function SurahAyaNavigator({
       <ThemedView
         style={[styles.container, { backgroundColor: 'transparent' }]}
       >
-        <ThemedText>{`حدث خطأ: ${error}`}</ThemedText>
+        <ThemedText>{t('navigation.error', { error })}</ThemedText>
       </ThemedView>
     );
   }
@@ -96,7 +98,7 @@ export default function SurahAyaNavigator({
         ]}
       />
       <ThemedText style={styles.surahName}>{item.name}</ThemedText>
-      <ThemedText style={styles.surahInfo}>{item.numberOfAyahs} آية</ThemedText>
+      <ThemedText style={styles.surahInfo}>{item.numberOfAyahs} {t('navigation.ayah')}</ThemedText>
     </TouchableOpacity>
   );
 
@@ -123,8 +125,8 @@ export default function SurahAyaNavigator({
         <TouchableOpacity
           style={[styles.selector, { borderColor: primaryColor }]}
           onPress={() => setSurahModalVisible(true)}
-          accessibilityLabel="اختر سورة"
-          accessibilityHint="اضغط لفتح قائمة السور"
+          accessibilityLabel={t('navigation.select_surah')}
+          accessibilityHint={t('navigation.select_surah')}
         >
           <ThemedText style={[styles.selectorText, { color: primaryColor }]}>
             {currentSurahName}
@@ -151,8 +153,8 @@ export default function SurahAyaNavigator({
         <TouchableOpacity
           style={[styles.selector, { borderColor: primaryColor }]}
           onPress={() => setAyaModalVisible(true)}
-          accessibilityLabel="اختر آية"
-          accessibilityHint="اضغط لفتح قائمة الآيات"
+          accessibilityLabel={t('navigation.select_aya')}
+          accessibilityHint={t('navigation.select_aya')}
         >
           <ThemedText style={[styles.selectorText, { color: primaryColor }]}>
             {currentAya}
@@ -178,7 +180,7 @@ export default function SurahAyaNavigator({
             onStartShouldSetResponder={() => true}
           >
             <ThemedView style={[styles.modalHeader, { borderBottomColor: borderColor }]}>
-              <ThemedText style={styles.modalTitle}>اختر سورة</ThemedText>
+              <ThemedText style={styles.modalTitle}>{t('navigation.select_surah')}</ThemedText>
               <TouchableOpacity
                 style={styles.closeButton}
                 onPress={() => setSurahModalVisible(false)}
@@ -220,7 +222,7 @@ export default function SurahAyaNavigator({
             onStartShouldSetResponder={() => true}
           >
             <ThemedView style={[styles.modalHeader, { borderBottomColor: borderColor }]}>
-              <ThemedText style={styles.modalTitle}>اختر آية</ThemedText>
+              <ThemedText style={styles.modalTitle}>{t('navigation.select_aya')}</ThemedText>
               <TouchableOpacity
                 style={styles.closeButton}
                 onPress={() => setAyaModalVisible(false)}

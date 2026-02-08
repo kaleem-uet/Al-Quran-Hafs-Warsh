@@ -189,19 +189,9 @@ export default function MushafPage() {
       -maxTranslateX,
       Math.min(translateX.value, maxTranslateX),
     );
-    const shadowOpacity = Math.min(
-      0.5,
-      Math.abs(clampedTranslateX) / maxTranslateX,
-    );
-    const opacity = Math.max(
-      0.85,
-      1 - Math.abs(clampedTranslateX) / maxTranslateX,
-    );
 
     return {
       transform: [{ translateX: clampedTranslateX }],
-      shadowOpacity,
-      opacity,
     };
   });
 
@@ -351,32 +341,45 @@ export default function MushafPage() {
               {isLandscape ? (
                 <ScrollView style={styles.scrollContainer}>
                   <Image
+                    key={`${currentPage}-${asset?.localUri}`}
                     style={[
-                      styles.image,
                       {
                         width: '100%',
                         height: undefined,
-                        aspectRatio: 0.7,
+                        aspectRatio: 456 / 672,
                       },
                       colorScheme === 'dark' && {
                         opacity: mushafContrastValue,
                       },
                     ]}
                     source={{ uri: asset?.localUri }}
-                    contentFit="fill"
+                    contentFit="contain"
+                    transition={200}
+                    priority="high"
+                    cachePolicy="memory-disk"
+                    allowDownscaling={false}
+                    recyclingKey={`page-${currentPage}`}
                   />
                 </ScrollView>
               ) : (
                 <Image
+                  key={`${currentPage}-${asset?.localUri}`}
                   style={[
-                    styles.image,
-                    { width: '100%' },
+                    {
+                      width: '100%',
+                      height: '100%',
+                    },
                     colorScheme === 'dark' && {
                       opacity: mushafContrastValue,
                     },
                   ]}
                   source={{ uri: asset?.localUri }}
-                  contentFit="fill"
+                  contentFit="contain"
+                  transition={200}
+                  priority="high"
+                  cachePolicy="memory-disk"
+                  allowDownscaling={false}
+                  recyclingKey={`page-${currentPage}`}
                 />
               )}
             </>

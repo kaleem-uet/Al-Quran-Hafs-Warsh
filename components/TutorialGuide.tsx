@@ -24,9 +24,9 @@ import NextSVG from '@/assets/svgs/next.svg';
 import { ThemedButton } from '@/components/ThemedButton';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
-import { SLIDES } from '@/constants';
 import { useColors } from '@/hooks/useColors';
 import useOrientation from '@/hooks/useOrientation';
+import { useTranslation } from '@/hooks/useTranslation';
 import { finishedTutorial } from '@/jotai/atoms';
 import { isRTL } from '@/utils';
 
@@ -36,7 +36,132 @@ export default function TutorialGuide() {
   const { primaryColor, primaryLightColor } = useColors();
   const setFinishedTutorial = useSetAtom(finishedTutorial);
   const { isLandscape } = useOrientation();
+  const { t, isRTL: isRTLLanguage } = useTranslation();
   const [index, setIndex] = useState(0);
+
+  // Define slides using translations
+  const SLIDES = [
+    {
+      title: t('tutorial.slides.welcome.title'),
+      description: t('tutorial.slides.welcome.description'),
+      image: require('@/assets/images/android-icon.png'),
+    },
+    {
+      title: t('tutorial.slides.mushaf.title'),
+      description: t('tutorial.slides.mushaf.description'),
+      image: require('@/assets/tutorial/mushaf.png'),
+    },
+    {
+      title: t('tutorial.slides.top_menu.title'),
+      description: [
+        {
+          text: t('tutorial.slides.top_menu.description.0.text' as any),
+          align: 'center' as const,
+        },
+        {
+          text: t('tutorial.slides.top_menu.description.1.text' as any),
+          align: 'start' as const,
+        },
+        {
+          text: t('tutorial.slides.top_menu.description.2.text' as any),
+          align: 'start' as const,
+        },
+        {
+          text: t('tutorial.slides.top_menu.description.3.text' as any),
+          align: 'start' as const,
+        },
+        {
+          text: t('tutorial.slides.top_menu.description.4.text' as any),
+          align: 'start' as const,
+        },
+      ],
+      image: require('@/assets/tutorial/top-menu.png'),
+    },
+    {
+      title: t('tutorial.slides.search.title'),
+      description: [
+        {
+          text: t('tutorial.slides.search.description.0.text' as any),
+          align: 'center' as const,
+        },
+        {
+          text: t('tutorial.slides.search.description.1.text' as any),
+          align: 'start' as const,
+        },
+        {
+          text: t('tutorial.slides.search.description.2.text' as any),
+          align: 'start' as const,
+        },
+      ],
+      image: require('@/assets/tutorial/search.png'),
+    },
+    {
+      title: t('tutorial.slides.navigation.title'),
+      description: [
+        {
+          text: t('tutorial.slides.navigation.description.0.text' as any),
+          align: 'center' as const,
+        },
+        {
+          text: t('tutorial.slides.navigation.description.1.text' as any),
+          align: 'start' as const,
+        },
+        {
+          text: t('tutorial.slides.navigation.description.2.text' as any),
+          align: 'start' as const,
+        },
+        {
+          text: t('tutorial.slides.navigation.description.3.text' as any),
+          align: 'start' as const,
+        },
+      ],
+      image: require('@/assets/tutorial/navigation.png'),
+    },
+    {
+      title: t('tutorial.slides.tracker.title'),
+      description: [
+        {
+          text: t('tutorial.slides.tracker.description.0.text' as any),
+          align: 'center' as const,
+        },
+        {
+          text: t('tutorial.slides.tracker.description.1.text' as any),
+          align: 'start' as const,
+        },
+        {
+          text: t('tutorial.slides.tracker.description.2.text' as any),
+          align: 'start' as const,
+        },
+        {
+          text: t('tutorial.slides.tracker.description.3.text' as any),
+          align: 'start' as const,
+        },
+        {
+          text: t('tutorial.slides.tracker.description.4.text' as any),
+          align: 'start' as const,
+        },
+      ],
+      image: require('@/assets/tutorial/tracker.png'),
+    },
+    {
+      title: t('tutorial.slides.settings.title'),
+      description: [
+        {
+          text: t('tutorial.slides.settings.description.0.text' as any),
+          align: 'center' as const,
+        },
+        {
+          text: t('tutorial.slides.settings.description.1.text' as any),
+          align: 'start' as const,
+        },
+        {
+          text: t('tutorial.slides.settings.description.2.text' as any),
+          align: 'start' as const,
+        },
+      ],
+      image: require('@/assets/tutorial/settings.png'),
+    },
+  ];
 
   const finishTutorial = () => {
     setFinishedTutorial(true);
@@ -125,12 +250,23 @@ export default function TutorialGuide() {
               <View style={styles.buttonContent}>
                 {index < SLIDES.length - 1 ? (
                   <>
-                    <Text style={styles.buttonText}>التالي</Text>
-                    <NextSVG width={24} height={24} style={styles.buttonIcon} />
+                    {!isRTLLanguage && (
+                      <View style={{ transform: [{ scaleX: -1 }] }}>
+                        <NextSVG
+                          width={24}
+                          height={24}
+                          style={styles.buttonIcon}
+                        />
+                      </View>
+                    )}
+                    <Text style={styles.buttonText}>{t('common.next')}</Text>
+                    {isRTLLanguage && (
+                      <NextSVG width={24} height={24} style={styles.buttonIcon} />
+                    )}
                   </>
                 ) : (
                   <>
-                    <Text style={styles.buttonText}>إنتهاء</Text>
+                    <Text style={styles.buttonText}>{t('common.finish')}</Text>
                     <CheckedSVG
                       width={24}
                       height={24}
@@ -145,7 +281,7 @@ export default function TutorialGuide() {
                 <Text
                   style={[styles.closeButtonText, { color: primaryLightColor }]}
                 >
-                  تخطي
+                  {t('common.skip')}
                 </Text>
               </Pressable>
               <View

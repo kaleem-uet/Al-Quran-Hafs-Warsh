@@ -18,10 +18,13 @@ export default function useImagesArray() {
   useEffect(() => {
     isMounted.current = true;
     setIsLoading(true);
+    setAsset(null); // Clear previous asset when riwaya or page changes
+    setError(null); // Clear previous errors
 
     const loadAsset = async () => {
       try {
         if (mushafRiwayaValue === undefined) {
+          setIsLoading(false);
           return;
         }
 
@@ -37,6 +40,7 @@ export default function useImagesArray() {
             imagesMap = undefined;
         }
         if (!imagesMap) {
+          setIsLoading(false);
           return;
         }
 

@@ -1,7 +1,7 @@
 {
-  "name": "المصحف المفتوح",
-  "short_name": "المصحف المفتوح",
-  "description": "تطبيق مصحف قرآني حديث وبسيط",
+  "name": "القرآن الكريم",
+  "short_name": "القرآن الكريم",
+  "description": "تطبيق قرآني حديث وبسيط",
   "id": "f2d6a7c9-64fc-4e67-97f5-8e8f12dcb4c4",
   "start_url": "/",
   "scope": "/",
@@ -60,7 +60,7 @@
       "sizes": "400x857",
       "type": "image/png",
       "platform": "narrow",
-      "label": "Mushaf Page - Quran reading view",
+      "label": "Quran Page - Quran reading view",
       "form_factor": "narrow"
     },
     {
@@ -68,7 +68,7 @@
       "sizes": "1437x916",
       "type": "image/png",
       "platform": "wide",
-      "label": "Mushaf Page - Quran reading view",
+      "label": "Quran Page - Quran reading view",
       "form_factor": "wide"
     },
     {
@@ -116,35 +116,35 @@
     {
       "name": "بحث",
       "short_name": "بحث",
-      "description": "البحث في المصحف المفتوح",
+      "description": "البحث في القرآن الكريم",
       "url": "/search",
       "icons": [{ "src": "icons/search.png", "sizes": "256x256" }]
     },
     {
       "name": "تصفح",
       "short_name": "تصفح",
-      "description": "تصفح المصحف المفتوح",
+      "description": "تصفح القرآن الكريم",
       "url": "/navigation",
       "icons": [{ "src": "icons/navigation-screen.png", "sizes": "256x256" }]
     },
     {
       "name": "حول",
       "short_name": "حول",
-      "description": "حول المصحف المفتوح",
+      "description": "حول القرآن الكريم",
       "url": "/about",
       "icons": [{ "src": "icons/about.png", "sizes": "256x256" }]
     },
     {
       "name": "إعدادات",
       "short_name": "إعدادات",
-      "description": "إعدادات المصحف المفتوح",
+      "description": "إعدادات القرآن الكريم",
       "url": "/settings",
       "icons": [{ "src": "icons/settings-screen.png", "sizes": "256x256" }]
     },
     {
       "name": "تعليمات",
       "short_name": "تعليمات",
-      "description": "كيفية استخدام المصحف المفتوح",
+      "description": "كيفية استخدام القرآن الكريم",
       "url": "/tutorial",
       "icons": [{ "src": "icons/tutorial.png", "sizes": "256x256" }]
     },

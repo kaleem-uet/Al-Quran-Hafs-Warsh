@@ -135,5 +135,5 @@ export const languageAtom = createAtomWithStorage<Language>(
 export type ThemePreference = 'system' | 'light' | 'dark';
 export const themePreferenceAtom = createAtomWithStorage<ThemePreference>(
   'ThemePreference',
-  'system', // Default to system preference
+  'dark', // Default to dark theme
 );

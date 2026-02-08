@@ -10,7 +10,10 @@
         "resourceClass": "medium",
         "image": "latest"
       },
-      "channel": "preview"
+      "channel": "preview",
+      "env": {
+        "EAS_DANGEROUS_OVERRIDE_UPDATES_VALIDATION": "1"
+      }
     },
     "production": {
       "android": {
@@ -19,7 +22,8 @@
         "image": "latest"
       },
       "channel": "production",
-      "autoIncrement": true
+      "autoIncrement": true,
+      "node": "25.4.0"
     }
   },
   "submit": {

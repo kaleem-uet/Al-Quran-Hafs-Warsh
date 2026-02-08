@@ -1,23 +1,27 @@
 {
   "expo": {
-    "name": "Open Mushaf",
+    "name": "Al Quran Hafs & Warsh",
     "slug": "open-mushaf-native",
-    "owner": "adelpro",
+    "owner": "kaleemullahk989",
     "version": "4.0.0",
     "orientation": "default",
-    "assetBundlePatterns": ["**/*"],
-    "icon": "./assets/images/icon.png",
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "icon": "./assets/images/android-icon.png",
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.adelpro.openmushafnative",
-      "requireFullScreen": true
+      "requireFullScreen": true,
+      "icon": "./assets/images/Assets.xcassets/AppIcon.appiconset/1024.png"
     },
     "android": {
+      "icon": "./assets/images/android-icon.png",
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "foregroundImage": "./assets/images/android-icon.png",
         "backgroundColor": "#ffffff"
       },
       "edgeToEdgeEnabled": true,
@@ -29,19 +33,26 @@
             "host": "quran.us.kg",
             "pathPrefix": "/"
           },
-          "category": ["BROWSABLE", "DEFAULT"],
+          "category": [
+            "BROWSABLE",
+            "DEFAULT"
+          ],
           "autoVerify": true
         }
       ],
       "softwareKeyboardLayoutMode": "resize",
       "jsEngine": "hermes",
       "package": "com.adelpro.openmushafnative",
-      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.adelpro.openmushafnative"
+      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.adelpro.openmushafnative",
+      "permissions": [
+        "android.permission.RECORD_AUDIO",
+        "android.permission.MODIFY_AUDIO_SETTINGS"
+      ]
     },
     "web": {
       "bundler": "metro",
       "output": "static",
-      "favicon": "./assets/images/favicon.png"
+      "favicon": "./assets/images/android-icon.png"
     },
     "plugins": [
       [
@@ -57,9 +68,9 @@
         "expo-splash-screen",
         {
           "backgroundColor": "#f8f8f0",
-          "image": "./assets/images/icon-large.png",
+          "image": "./assets/images/android-icon.png",
           "dark": {
-            "image": "./assets/images/icon-large.png",
+            "image": "./assets/images/android-icon.png",
             "backgroundColor": "#eeeee6"
           },
           "imageWidth": 200
@@ -77,18 +88,14 @@
       "reactCompiler": true
     },
     "extra": {
+      "router": {},
       "eas": {
-        "projectId": "2360a464-857f-4685-8c0f-be166a166847"
+        "projectId": "376e0536-0a92-4280-b5b5-19184cc2322c"
       }
     },
     "updates": {
-      "url": "https://u.expo.dev/2360a464-857f-4685-8c0f-be166a166847",
-      "enabled": true,
-      "checkAutomatically": "ON_LOAD",
-      "fallbackToCacheTimeout": 3000
+      "url": "https://u.expo.dev/376e0536-0a92-4280-b5b5-19184cc2322c"
     },
-    "runtimeVersion": {
-      "policy": "fingerprint"
-    }
+    "runtimeVersion": "4.0.0"
   }
 }
